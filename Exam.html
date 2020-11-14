@@ -211,7 +211,7 @@
                 success: function(data){
                     $(data.exam).each(function(index,value){
                         var record="<tr><td>"+value.Date+"</td><td>"+
-                        value.FN+"</td><td>"+value.AN"</td></tr>";
+                        value.FN+"</td><td>"+value.AN+"</td></tr>";
                         $("table").append(record);
                     });
                 }
