@@ -11,7 +11,7 @@
   <body>
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg fixed-top navbar-light">
-      <a class="navbar-brand" href="#"><img class="img-logo" src="logo0.png"></a>
+      <a class="navbar-brand" href="#"><img class="img-logo" src="logo0.png">&nbsp;&nbsp;Portal</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -35,7 +35,6 @@
                 <img class="img-profile d-none d-lg-inline rounded-circle" class="" src="Profile.svg">
               </a>
               <div class="dropdown-menu text-center animate animation" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="#">Profile</a>
                 <a class="dropdown-item" href="#">Notifications</a>
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="#">Logout</a>
@@ -49,36 +48,23 @@
       </div>
     </nav>
     <!-- Navbar End -->
-    
+
     <!-- Table -->
     <div class="notification-table">
-        <h2 class="text-center">Attendance</h2><br>
-        <div class="dropdown-toggle" role="dropdown" id="subjectDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <span>Select Subject </span>
-            <div class="dropdown-menu text-center" aria-labelledby="subjectDropdown">
-                <a href="#" class="dropdown-item">Subject 1 - II CSE A</a>
-                <a href="#" class="dropdown-item">Subject 2 - IV CSE A</a>
-                <a href="#" class="dropdown-item">Subject 3 - III ECE C</a>
-            </div>
-        </div>
-        
-        <br><br>
-        <table class="table table-bordered table-striped">
+        <h2 class="text-center">Notifications</h2><br>
+        <table class="table table-bordered table-striped" id="employee_table">
             <thead>
                 <tr>
-                    <th style="width: 30%;">Roll No</th>
-                    <th style="width: 30%;">Name</th>
-                    <th style="width: 40%;">Subject Name&nbsp;&nbsp;<input type="datetime-local"></th>
+                    <th>Notifications</th>
+                    <th>Action</th>
                 </tr>
             </thead>
         </table>
-        <div class="text-right">
-            <button class="btn btn-primary" type="submit">Submit</button>
-        </div>
     </div>
     
     <!-- Table End -->
 
+    
     <!-- Styles -->
     
     <!-- Styles End -->
@@ -219,12 +205,11 @@
     <script>
         $(document).ready(function(){
             $.ajax({
-                url:"Fattendance.json",
+                url:"FNotifications.json",
                 dataType: "json",
                 success: function(data){
-                    $(data.attendance).each(function(index,value){
-                        var record="<tr><td>"+value.RollNo+"</td><td>"+
-                        value.Name+"</td><td>"+value.Attendance+"</td></tr>";
+                    $(data.fnotificaitons).each(function(index,value){
+                        var record="<tr><td>"+value.Notifications+"</td><td>"+value.Action+"</td></tr>";
                         $("table").append(record);
                     });
                 }
