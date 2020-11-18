@@ -31,7 +31,7 @@
         <ul class="navbar-nav ml-auto" style="padding-right: 5px;">
           <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <span class="mr-2">Dr. Kannimuthu S</span>
+                <span class="mr-2">HOD / Tutor</span>
                 <img class="img-profile d-none d-lg-inline rounded-circle" class="" src="Profile.svg">
               </a>
               <div class="dropdown-menu text-center animate animation" aria-labelledby="navbarDropdown">
@@ -52,7 +52,55 @@
     <!-- Table -->
     <div class="notification-table">
         <h2 class="text-center">Class Time-Table</h2><br>
-        <table class="table table-bordered table-striped" id="employee_table">
+        <div class="container">
+            <a class="btn btn-primary" type="button" data-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">Class 1</a>
+            <a class="btn btn-primary" type="button" data-toggle="collapse" href="#multiCollapseExample2" role="button" aria-expanded="false" aria-controls="multiCollapseExample2">Class 2</a>
+            <a class="btn btn-primary" type="button" data-toggle="collapse" href="#multiCollapseExample3" role="button" aria-expanded="false" aria-controls="multiCollapseExample3">Class 3</a>
+            <a class="btn btn-primary" type="button" data-toggle="collapse" href="#multiCollapseExample4" role="button" aria-expanded="false" aria-controls="multiCollapseExample4">Class 2</a>
+        </div>
+        <table class="table table-bordered table-striped collapse multi-collapse" id="multiCollapseExample1">
+            <thead>
+                <tr>
+                    <th style="width: 12.5%;">Day</th>
+                    <th style="width: 12.5%;">Period 1</th>
+                    <th style="width: 12.5%;">Period 2</th>
+                    <th style="width: 12.5%;">Period 3</th>
+                    <th style="width: 12.5%;">Period 4</th>
+                    <th style="width: 12.5%;">Period 5</th>
+                    <th style="width: 12.5%;">Period 6</th>
+                    <th style="width: 12.5%;">Period 7</th>
+                </tr>
+            </thead>
+        </table>
+        <table class="table table-bordered table-striped collapse multi-collapse" id="multiCollapseExample2">
+            <thead>
+                <tr>
+                    <th style="width: 12.5%;">Day</th>
+                    <th style="width: 12.5%;">Period 1</th>
+                    <th style="width: 12.5%;">Period 2</th>
+                    <th style="width: 12.5%;">Period 3</th>
+                    <th style="width: 12.5%;">Period 4</th>
+                    <th style="width: 12.5%;">Period 5</th>
+                    <th style="width: 12.5%;">Period 6</th>
+                    <th style="width: 12.5%;">Period 7</th>
+                </tr>
+            </thead>
+        </table>
+        <table class="table table-bordered table-striped collapse multi-collapse" id="multiCollapseExample3">
+            <thead>
+                <tr>
+                    <th style="width: 12.5%;">Day</th>
+                    <th style="width: 12.5%;">Period 1</th>
+                    <th style="width: 12.5%;">Period 2</th>
+                    <th style="width: 12.5%;">Period 3</th>
+                    <th style="width: 12.5%;">Period 4</th>
+                    <th style="width: 12.5%;">Period 5</th>
+                    <th style="width: 12.5%;">Period 6</th>
+                    <th style="width: 12.5%;">Period 7</th>
+                </tr>
+            </thead>
+        </table>
+        <table class="table table-bordered table-striped collapse multi-collapse" id="multiCollapseExample4">
             <thead>
                 <tr>
                     <th style="width: 12.5%;">Day</th>
@@ -210,7 +258,7 @@
     <script>
         $(document).ready(function(){
             $.ajax({
-                url:"FClassTimetable.json",
+                url:"DClassTimetable.json",
                 dataType: "json",
                 success: function(data){
                     $(data.class).each(function(index,value){

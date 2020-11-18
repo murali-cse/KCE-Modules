@@ -31,7 +31,7 @@
         <ul class="navbar-nav ml-auto" style="padding-right: 5px;">
           <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <span class="mr-2">Dr. Kannimuthu S</span>
+                <span class="mr-2">Principal / Placement</span>
                 <img class="img-profile d-none d-lg-inline rounded-circle" class="" src="Profile.svg">
               </a>
               <div class="dropdown-menu text-center animate animation" aria-labelledby="navbarDropdown">
@@ -51,18 +51,48 @@
     
     <!-- Table -->
     <div class="notification-table">
-        <h2 class="text-center">Class Time-Table</h2><br>
-        <table class="table table-bordered table-striped" id="employee_table">
+        <h2 class="text-center">Results</h2><br>
+        <div class="container">
+            <a class="btn btn-primary" type="button" data-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">Department 1</a>
+            <a class="btn btn-primary" type="button" data-toggle="collapse" href="#multiCollapseExample2" role="button" aria-expanded="false" aria-controls="multiCollapseExample2">Department 2</a>
+            <a class="btn btn-primary" type="button" data-toggle="collapse" href="#multiCollapseExample3" role="button" aria-expanded="false" aria-controls="multiCollapseExample3">Department 3</a>
+            <a class="btn btn-primary" type="button" data-toggle="collapse" href="#multiCollapseExample4" role="button" aria-expanded="false" aria-controls="multiCollapseExample4">Department 2</a>
+        </div>
+        
+        <br><br>
+        <table class="table table-bordered table-striped collapse multi-collapse" id="multiCollapseExample1">
             <thead>
                 <tr>
-                    <th style="width: 12.5%;">Day</th>
-                    <th style="width: 12.5%;">Period 1</th>
-                    <th style="width: 12.5%;">Period 2</th>
-                    <th style="width: 12.5%;">Period 3</th>
-                    <th style="width: 12.5%;">Period 4</th>
-                    <th style="width: 12.5%;">Period 5</th>
-                    <th style="width: 12.5%;">Period 6</th>
-                    <th style="width: 12.5%;">Period 7</th>
+                    <th style="width: 30%;">Roll No</th>
+                    <th style="width: 30%;">Name</th>
+                    <th style="width: 30%;">Grade</th>
+                </tr>
+            </thead>
+        </table>
+        <table class="table table-bordered table-striped collapse multi-collapse" id="multiCollapseExample2">
+            <thead>
+                <tr>
+                    <th style="width: 30%;">Roll No</th>
+                    <th style="width: 30%;">Name</th>
+                    <th style="width: 30%;">Grade</th>
+                </tr>
+            </thead>
+        </table>
+        <table class="table table-bordered table-striped collapse multi-collapse" id="multiCollapseExample3">
+            <thead>
+                <tr>
+                    <th style="width: 30%;">Roll No</th>
+                    <th style="width: 30%;">Name</th>
+                    <th style="width: 30%;">Grade</th>
+                </tr>
+            </thead>
+        </table>
+        <table class="table table-bordered table-striped collapse multi-collapse" id="multiCollapseExample4">
+            <thead>
+                <tr>
+                    <th style="width: 30%;">Roll No</th>
+                    <th style="width: 30%;">Name</th>
+                    <th style="width: 30%;">Grade</th>
                 </tr>
             </thead>
         </table>
@@ -210,15 +240,12 @@
     <script>
         $(document).ready(function(){
             $.ajax({
-                url:"FClassTimetable.json",
+                url:"FResults.json",
                 dataType: "json",
                 success: function(data){
-                    $(data.class).each(function(index,value){
-                        var record="<tr><td>"+value.Day+"</td><td>"+
-                        value.Period1+"</td><td>"+value.Period2+
-                        "</td><td>"+value.Period3+"</td><td>"+value.Period4+
-                        "</td><td>"+value.Period5+"</td><td>"+value.Period6+
-                        "</td><td>"+value.Period7+"</td></tr>";
+                    $(data.result).each(function(index,value){
+                        var record="<tr><td>"+value.RollNo+"</td><td>"+
+                        value.Name+"</td><td>"+value.Grade+"</td></tr>";
                         $("table").append(record);
                     });
                 }

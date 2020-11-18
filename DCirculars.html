@@ -31,7 +31,7 @@
         <ul class="navbar-nav ml-auto" style="padding-right: 5px;">
           <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <span class="mr-2">Dr. Kannimuthu S</span>
+                <span class="mr-2">HOD / Tutor</span>
                 <img class="img-profile d-none d-lg-inline rounded-circle" class="" src="Profile.svg">
               </a>
               <div class="dropdown-menu text-center animate animation" aria-labelledby="navbarDropdown">
@@ -48,21 +48,15 @@
       </div>
     </nav>
     <!-- Navbar End -->
-    
+
     <!-- Table -->
     <div class="notification-table">
-        <h2 class="text-center">Class Time-Table</h2><br>
+        <h2 class="text-center">Circulars</h2><br>
         <table class="table table-bordered table-striped" id="employee_table">
             <thead>
                 <tr>
-                    <th style="width: 12.5%;">Day</th>
-                    <th style="width: 12.5%;">Period 1</th>
-                    <th style="width: 12.5%;">Period 2</th>
-                    <th style="width: 12.5%;">Period 3</th>
-                    <th style="width: 12.5%;">Period 4</th>
-                    <th style="width: 12.5%;">Period 5</th>
-                    <th style="width: 12.5%;">Period 6</th>
-                    <th style="width: 12.5%;">Period 7</th>
+                    <th style="width: 70%;">Title</th>
+                    <th style="width: 30%;">Action</th>
                 </tr>
             </thead>
         </table>
@@ -70,6 +64,7 @@
     
     <!-- Table End -->
 
+    
     <!-- Styles -->
     
     <!-- Styles End -->
@@ -210,15 +205,12 @@
     <script>
         $(document).ready(function(){
             $.ajax({
-                url:"FClassTimetable.json",
+                url:"FCirculars.json",
                 dataType: "json",
                 success: function(data){
-                    $(data.class).each(function(index,value){
-                        var record="<tr><td>"+value.Day+"</td><td>"+
-                        value.Period1+"</td><td>"+value.Period2+
-                        "</td><td>"+value.Period3+"</td><td>"+value.Period4+
-                        "</td><td>"+value.Period5+"</td><td>"+value.Period6+
-                        "</td><td>"+value.Period7+"</td></tr>";
+                    $(data.fcircular).each(function(index,value){
+                        var record="<tr><td>"+value.Title+"</td><td>"+
+                        value.Action+"</td></tr>";
                         $("table").append(record);
                     });
                 }

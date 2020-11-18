@@ -11,7 +11,7 @@
   <body>
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg fixed-top navbar-light">
-      <a class="navbar-brand" href="#"><img class="img-logo" src="logo0.png"></a>
+      <a class="navbar-brand" href="#"><img class="img-logo" src="logo0.png">&nbsp;&nbsp;Portal</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -31,11 +31,11 @@
         <ul class="navbar-nav ml-auto" style="padding-right: 5px;">
           <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <span class="mr-2">Dr. Kannimuthu S</span>
+                <span class="mr-2">COE</span>
                 <img class="img-profile d-none d-lg-inline rounded-circle" class="" src="Profile.svg">
               </a>
               <div class="dropdown-menu text-center animate animation" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="#">Profile</a>
+                <a class="dropdown-item" href="#">Notifications</a>
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="#">Logout</a>
               </div>
@@ -48,21 +48,15 @@
       </div>
     </nav>
     <!-- Navbar End -->
-    
+
     <!-- Table -->
     <div class="notification-table">
-        <h2 class="text-center">Class Time-Table</h2><br>
+        <h2 class="text-center">Notifications</h2><br>
         <table class="table table-bordered table-striped" id="employee_table">
             <thead>
                 <tr>
-                    <th style="width: 12.5%;">Day</th>
-                    <th style="width: 12.5%;">Period 1</th>
-                    <th style="width: 12.5%;">Period 2</th>
-                    <th style="width: 12.5%;">Period 3</th>
-                    <th style="width: 12.5%;">Period 4</th>
-                    <th style="width: 12.5%;">Period 5</th>
-                    <th style="width: 12.5%;">Period 6</th>
-                    <th style="width: 12.5%;">Period 7</th>
+                    <th>Notifications</th>
+                    <th>Action</th>
                 </tr>
             </thead>
         </table>
@@ -70,6 +64,7 @@
     
     <!-- Table End -->
 
+    
     <!-- Styles -->
     
     <!-- Styles End -->
@@ -210,15 +205,11 @@
     <script>
         $(document).ready(function(){
             $.ajax({
-                url:"FClassTimetable.json",
+                url:"FNotifications.json",
                 dataType: "json",
                 success: function(data){
-                    $(data.class).each(function(index,value){
-                        var record="<tr><td>"+value.Day+"</td><td>"+
-                        value.Period1+"</td><td>"+value.Period2+
-                        "</td><td>"+value.Period3+"</td><td>"+value.Period4+
-                        "</td><td>"+value.Period5+"</td><td>"+value.Period6+
-                        "</td><td>"+value.Period7+"</td></tr>";
+                    $(data.fnotificaitons).each(function(index,value){
+                        var record="<tr><td>"+value.Notifications+"</td><td>"+value.Action+"</td></tr>";
                         $("table").append(record);
                     });
                 }
