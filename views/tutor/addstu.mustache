@@ -15,7 +15,7 @@
     <body>
         <!-- Navbar -->
         <nav class="navbar navbar-expand-lg fixed-top navbar-light">
-            <a class="navbar-brand" href="#"><img class="img-logo" src="logo0.png"></a>
+            <a class="navbar-brand" href="#"><img class="img-logo" src="/images/logo0.png"></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
             </button>
@@ -25,12 +25,12 @@
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <span class="mr-2">Dr. Kannimuthu S</span>
-                    <img class="img-profile d-none d-lg-inline rounded-circle" class="" src="Profile.svg">
+                    <img class="img-profile d-none d-lg-inline rounded-circle" class="" src="/images/Profile.svg">
                     </a>
                     <div class="dropdown-menu text-center animate animation" aria-labelledby="navbarDropdown">
                     <a class="dropdown-item" href="#">Profile</a>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">Logout</a>
+                    <a class="dropdown-item" href="/">Logout</a>
                     </div>
                 </li>
             </ul>
@@ -41,17 +41,18 @@
         <div class="container form-container">
             <div class="row">
                 <div class="col-md-4 mx-auto">
+                    <p>{{msg}}</p>
                     <form action="/tutor/addstu" class="was-validated" method='POST'>
                         <div class="form-group">
-                            <input type="text" id="stuname" class="form-control" required>
+                            <input type="text" id="stuname" name="stuname" class="form-control" required>
                             <label class="form-control-placeholder" for="stuname">Student Name : </label>
                         </div>
                         <div class="form-group">
-                            <input type="text" id="sturoll" class="form-control" required>
+                            <input type="text" id="sturoll" name="sturoll" class="form-control" required>
                             <label class="form-control-placeholder" for="sturoll">Student Roll no : </label>
                         </div>
                         <div class="form-group">
-                            <select class="custom-select" id="Department" required>
+                            <select class="custom-select" id="dept" name="dept" required>
                                 <option value="">Department</option>
                                 <option value="auto">Automobile</option>
                                 <option value="mech">Mechanical</option>
@@ -64,7 +65,7 @@
                             <div class="invalid-feedback">Select A Department</div>
                         </div>
                         <div class="form-group">
-                            <select class="custom-select" id="Department" required>
+                            <select class="custom-select" id="year" name="year"  required>
                                 <option value="">Year</option>
                                 <option value="1">Year I`</option>
                                 <option value="2">Year II</option>
@@ -74,15 +75,15 @@
                             <div class="invalid-feedback">Select A Year</div>
                         </div>
                         <div class="form-group">
-                            <input type="email" id="stuemail" class="form-control" required>
+                            <input type="email" id="stuemail"id="stuemail" name="stuemail" class="form-control" required>
                             <label class="form-control-placeholder" for="stuemail">E-Mail</label>
                         </div>
                         <div class="form-group">
-                            <input type="tel" id="stuphn" class="form-control" required maxlength="10">
+                            <input type="tel" id="stuphn"  name="stuphn"class="form-control" required maxlength="10">
                             <label class="form-control-placeholder" for="stuphn">Phone Number</label>
                         </div>
                         <div class="form-group">
-                            <input type="password" id="stupass" class="form-control" required>
+                            <input type="password" id="stupass" name="stupass" class="form-control" required>
                             <label class="form-control-placeholder" for="stupass">Password</label>
                         </div>
                         <div class="row">
@@ -91,7 +92,7 @@
                             </div>
                         </div>
                     </form>
-                    <p>{{msg}}</p>
+                    
                 </div>
             </div>
         </div>
